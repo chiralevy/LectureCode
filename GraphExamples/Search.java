@@ -7,18 +7,16 @@ public class Search {
 		Deque<Integer> q = new ArrayDeque<Integer>();
 		boolean[] visited = new boolean[g.numberOfVertices()]; 
 		q.addLast(start);
+		visited[start] = true;
 
 		while( !q.isEmpty() ) {
 			int v = q.removeFirst();
+			visited[v] = true;
 
-			if( !visited[v] ) {
-				System.out.println("Visiting: " + vToLetter(v));
-				visited[v] = true;
-
-				for( int adj: g.adj(v) ) {
-					if( !visited[adj] ) {
-						q.addLast(adj);
-					}
+			for( int adj: g.adj(v) ) {
+				if( !visited[adj] ) {
+					System.out.println("Visiting: " + vToLetter(adj));
+					q.addLast(adj);
 				}
 			}
 		}
@@ -77,6 +75,6 @@ public class Search {
 	}
 
 	public static void main(String[] args) {
-		dfs(lectureTree(), 0);
+		dfs(lectureGraph(), 0);
 	}
 }

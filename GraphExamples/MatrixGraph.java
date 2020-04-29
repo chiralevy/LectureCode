@@ -1,7 +1,6 @@
 import java.util.LinkedList;
 
 public class MatrixGraph implements Graph {
-
 	private boolean[][] adjMatrix;
 	
 	public MatrixGraph(int numberOfVertices) {
