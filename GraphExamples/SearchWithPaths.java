@@ -1,4 +1,5 @@
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
 
 public class SearchWithPaths {
@@ -26,6 +27,18 @@ public class SearchWithPaths {
 
 		printEdgeTo(edgeTo);
 	}
+	
+	public static void temp() {
+		ArrayList<String> a = new ArrayList<String>();
+		
+		a.add("a");
+		a.add("b");
+		a.add("c");
+		
+		for( String val: a ) {
+			System.out.println(val);
+		}
+	}
 
 	public static void dfs(Graph g, int start) {
 		boolean[] visited = new boolean[g.numberOfVertices()];
@@ -51,8 +64,6 @@ public class SearchWithPaths {
 			System.out.println(vToLetter(edgeTo[i]) + " -> " +
 					vToLetter(i));
 		}
-
-
 	}
 
 	public static Graph lectureTree() {

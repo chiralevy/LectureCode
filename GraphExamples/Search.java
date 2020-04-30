@@ -11,10 +11,10 @@ public class Search {
 
 		while( !q.isEmpty() ) {
 			int v = q.removeFirst();
-			visited[v] = true;
 
 			for( int adj: g.adj(v) ) {
 				if( !visited[adj] ) {
+					visited[adj] = true;
 					System.out.println("Visiting: " + vToLetter(adj));
 					q.addLast(adj);
 				}
@@ -75,6 +75,6 @@ public class Search {
 	}
 
 	public static void main(String[] args) {
-		dfs(lectureGraph(), 0);
+		bfs(lectureGraph(), 0);
 	}
 }
